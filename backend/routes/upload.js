@@ -1,29 +1,26 @@
 const express = require('express');
 const multer = require('multer');
-const path = require('path');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('cloudinary').v2;
 const router = express.Router();
 
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, '..', 'uploads'),
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  }
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const upload = multer({
-  storage,
-  fileFilter: (req, file, cb) => {
-    const filetypes = /jpeg|jpg|png|gif/;
-    const mimetype = filetypes.test(file.mimetype);
-    if (mimetype) return cb(null, true);
-    cb(new Error('Error: File upload only supports images!'));
-  }
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  allowedFormats: ['jpg', 'jpeg', 'png', 'gif'],
 });
+
+const upload = multer({ storage });
 
 router.post('/upload', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).send('No file uploaded.');
   res.json({
-    url: `http://localhost:5000/uploads/${req.file.filename}`
+    url: req.file.path // Cloudinary provides the secure URL here
   });
 });
 

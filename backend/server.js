@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -7,7 +8,15 @@ app.use(cors());
 app.use(express.json());
 
 // 🔗 Connect DB
-mongoose.connect("mongodb://127.0.0.1:27017/hiconcept");
+const dbUri = process.env.MONGODB_URI;
+console.log("Connecting to MongoDB using URI:", dbUri ? "Environment Variable Provided" : "Falling back to Localhost");
+
+mongoose.connect(dbUri || "mongodb://127.0.0.1:27017/hiconcept")
+  .then(() => console.log("MongoDB Connected Successfully"))
+  .catch(err => {
+    console.error("MongoDB connection error details:", err);
+    process.exit(1);
+  });
 
 // ✅ Import Routes
 const authRoutes = require("./routes/auth");
@@ -33,4 +42,5 @@ app.post("/api/contact", async (req, res) => {
 });
 
 // Server start
-app.listen(5000, () => console.log("Server running"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
