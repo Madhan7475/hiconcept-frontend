@@ -98,7 +98,7 @@ const Services = () => {
           <div className="w-80 h-80 bg-[radial-gradient(circle,_white_1px,_transparent_1px)] bg-[size:12px_12px]"></div>
         </div>
 
-        <div className="max-w-[900px] mx-auto px-6 space-y-16">
+        <div className="max-w-[900px] mx-auto px-6 space-y-5">
 
           {services.map((service) => (
             <Reveal key={service._id} className="text-center">

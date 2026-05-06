@@ -1,0 +1,28 @@
+{
+  "home": {
+    "hero_title": "Hi-Concept AV Solutions",
+    "hero_banner_url": "/banner.jpg",
+    "about_logo_url": "/logo2.png",
+    "about_text": "Hi-Concept AV Solutions is an Audio, Video, and Lighting integration company focused on delivering reliable and well-designed solutions. Our approach combines technical expertise with a clear understanding of how spaces are used, ensuring every system is practical, efficient, and easy to operate.\\n\\nWe work closely with clients to design solutions that align with their vision, whether it’s enhancing guest experiences, improving learning environments, or creating memorable live events. With experience across hospitality, educational institutions, and event production, we aim to provide systems that perform consistently and add long-term value.",
+    "why_choose_us_title": "Why Choose Us",
+    "why_choose_us_list": [
+      "Expertise in AVL Integration ",
+      "Engineered solutions based on detailed site analysis, ensuring efficient system performance, and long-term reliab",
+      "Unified integration of audio, video, and lighting systems with centralized control for smooth and intuitive operation",
+      "Structured project management, professional installation, and dependable after-sales service",
+      "Future-Ready & Scalable Solutions",
+      "Systems designed to adapt to evolving technology and expanding client requirements",
+      "Simplified interfaces and automation for effortless day-to-day operation by end users",
+      "Use of proven, industry-standard equipment ensuring durability and consistent performance",
+      "Tailored designs aligned with the functional, aesthetic, and operational needs of each project"
+    ]
+  },
+  "global": {
+    "divider_url": "/public/divider.svg"
+  },
+  "services_page": {
+    "banner_url": "/public/02.jpg",
+    "hero_title": "Our Services",
+    "hero_subtitle": "Tailored AV solutions designed to enhance every interaction"
+  }
+}

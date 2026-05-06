@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "1",
+    "title": "Sound System Design & Integration",
+    "description": "We design and integrate sound systems that deliver consistent coverage, clarity, and reliability across a wide range of environments. Every system is engineered to suit the acoustics and functional requirements of the space, ensuring optimal performance for both background and high-energy applications.",
+    "image_url": "/public/01.jpg",
+    "offerings": [
+      "Distributed audio systems for uniform sound coverage",
+      "Line array and high-performance speaker systems",
+      "Background music (BGM) and foreground audio solutions",
+      "Multi-zone audio control with independent routing",
+      "DSP configuration, system tuning, and calibration",
+      "Amplifier and speaker matching for efficiency and longevity",
+      "Integration with automation and control platforms",
+      "Upgrade and retrofit solutions for existing systems"
+    ]
+  },
+  {
+    "_id": "2",
+    "title": "Acoustic Design & Treatment",
+    "description": "We focus on improving how sound behaves within a space by addressing reflections, reverberation, and external noise interference. Our acoustic solutions are tailored to enhance speech intelligibility, musical clarity, and overall listening comfort.",
+    "image_url": "/public/02.jpg",
+    "offerings": [
+      "Detailed room acoustic analysis and assessment",
+      "Reverberation time (RT60) optimization",
+      "Sound isolation and noise leakage control",
+      "Custom acoustic panel design (wall, ceiling, bass traps)",
+      "Diffusion and absorption treatment planning",
+      "Vibration and structural noise control",
+      "Acoustic solutions for studios, auditoriums, and commercial spaces",
+      "Coordination with interior design for aesthetic integration"
+    ]
+  },
+  {
+    "_id": "3",
+    "title": "Video Solutions (Conferencing & Signage)",
+    "description": "We provide integrated video systems that support communication, collaboration, and visual engagement. Our solutions are designed for ease of use, reliability, and seamless integration into daily operations.",
+    "image_url": "/public/03.jpg",
+    "offerings": [
+      "Video conferencing systems for boardrooms and meeting spaces",
+      "Hybrid meeting and collaboration environments",
+      "Digital signage for branding, information, and advertising",
+      "LED walls, display panels, and projection systems",
+      "AV over IP and centralized video distribution",
+      "Touch panel and app-based control systems",
+      "Content management systems for signage networks",
+      "Integration with existing IT and network infrastructure"
+    ]
+  },
+  {
+    "_id": "4",
+    "title": "Lighting Design",
+    "description": "We design lighting systems that enhance the visual character of a space while maintaining functionality and energy efficiency. Our approach balances aesthetics with control and adaptability.",
+    "image_url": "/public/04.jpg",
+    "offerings": [
+      "Architectural lighting design for indoor and outdoor spaces",
+      "Ambient, task, and accent lighting solutions",
+      "Stage and performance lighting setups",
+      "DMX-based intelligent lighting systems",
+      "Scene-based lighting control and automation",
+      "Energy-efficient LED lighting solutions",
+      "Lighting integration with AV and control systems",
+      "Custom lighting solutions for themed environments"
+    ]
+  }
+]
