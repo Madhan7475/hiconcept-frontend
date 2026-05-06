@@ -19,7 +19,7 @@
     "_id": "2",
     "title": "Acoustic Design & Treatment",
     "description": "We focus on improving how sound behaves within a space by addressing reflections, reverberation, and external noise interference. Our acoustic solutions are tailored to enhance speech intelligibility, musical clarity, and overall listening comfort.",
-    "image_url": "/public/02.jpg",
+    "image_url": "/02.jpg",
     "offerings": [
       "Detailed room acoustic analysis and assessment",
       "Reverberation time (RT60) optimization",
@@ -35,7 +35,7 @@
     "_id": "3",
     "title": "Video Solutions (Conferencing & Signage)",
     "description": "We provide integrated video systems that support communication, collaboration, and visual engagement. Our solutions are designed for ease of use, reliability, and seamless integration into daily operations.",
-    "image_url": "/public/03.jpg",
+    "image_url": "/03.jpg",
     "offerings": [
       "Video conferencing systems for boardrooms and meeting spaces",
       "Hybrid meeting and collaboration environments",
@@ -51,7 +51,7 @@
     "_id": "4",
     "title": "Lighting Design",
     "description": "We design lighting systems that enhance the visual character of a space while maintaining functionality and energy efficiency. Our approach balances aesthetics with control and adaptability.",
-    "image_url": "/public/04.jpg",
+    "image_url": "/04.jpg",
     "offerings": [
       "Architectural lighting design for indoor and outdoor spaces",
       "Ambient, task, and accent lighting solutions",
