@@ -10,6 +10,21 @@ const Services = () => {
   const [globalContent, setGlobalContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // ✅ FIX: sanitize image paths from API
+  const fixPath = (url) => {
+    if (!url) return null;
+
+    // remove /public if backend sends it
+    let fixed = url.replace("/public", "");
+
+    // if backend accidentally sends localhost
+    if (fixed.includes("localhost")) {
+      return fixed.replace("http://localhost:5000", "");
+    }
+
+    return fixed;
+  };
+
   useEffect(() => {
     const fetchServicesData = async () => {
       try {
@@ -40,12 +55,13 @@ const Services = () => {
     );
   }
 
-  const heroBanner = content?.banner_url || "/02.jpg";
+  // ✅ Apply fixPath everywhere
+  const heroBanner = fixPath(content?.banner_url) || "/02.jpg";
   const heroTitle = content?.hero_title || "Our Services";
   const heroSubtitle =
     content?.hero_subtitle ||
     "Tailored AV solutions designed to enhance every interaction";
-  const divider = globalContent?.divider_url || "/divider.svg";
+  const divider = fixPath(globalContent?.divider_url) || "/divider.svg";
 
   return (
     <div className="bg-black text-white">
@@ -85,6 +101,7 @@ const Services = () => {
           </h2>
         </Reveal>
 
+        {/* DIVIDER TOP */}
         <Reveal className="w-full mb-10 flex justify-center">
           <img
             src={divider}
@@ -103,8 +120,9 @@ const Services = () => {
           {services.map((service) => (
             <Reveal key={service._id} className="text-center">
 
+              {/* ✅ FIXED IMAGE */}
               <img
-                src={service.image_url}
+                src={fixPath(service.image_url) || "/01.jpg"}
                 alt={service.title}
                 className="rounded-2xl w-full h-[320px] md:h-[440px] object-cover border border-gray-700"
               />
