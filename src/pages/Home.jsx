@@ -43,7 +43,7 @@ const Home = () => {
   }
 
   const heroTitle = content?.hero_title || "Hi-Concept AV Solutions";
-  const heroBanner = content?.hero_banner_url || "/banner.jpg";
+  const heroBanner = content?.hero_banner_url || "/banner.jpeg";
   const aboutLogo = content?.about_logo_url || "/logo2.png";
 
   const aboutText =
