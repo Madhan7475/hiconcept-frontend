@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8 text-lg">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/services">Service</Link>
+          <Link to="/services#sound-system-design-integration">Service</Link>
           <Link to="/contact">Contact</Link>
         </div>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
         </button>
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
-        <Link to="/services" onClick={() => setIsOpen(false)}>Service</Link>
+        <Link to="/services#sound-system-design-integration" onClick={() => setIsOpen(false)}>Service</Link>
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
       </div>
     </div>

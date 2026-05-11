@@ -117,8 +117,10 @@ const Services = () => {
 
         <div className="max-w-[900px] mx-auto px-6 space-y-5">
 
-          {services.map((service) => (
-            <Reveal key={service._id} className="text-center">
+          {services.map((service) => {
+            const serviceId = service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+            return (
+            <Reveal key={service._id} id={serviceId} className="text-center scroll-mt-24">
 
               {/* ✅ FIXED IMAGE */}
               <img
@@ -157,7 +159,8 @@ const Services = () => {
               </div>
 
             </Reveal>
-          ))}
+            );
+          })}
 
         </div>
       </section>
