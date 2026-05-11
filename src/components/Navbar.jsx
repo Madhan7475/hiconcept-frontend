@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,13 +39,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/services">Service</Link>
-
-          <Link
-            to="/contact"
-            className="bg-white text-black px-5 py-2 rounded-full"
-          >
-            Contact
-          </Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
         {/* MOBILE HAMBURGER */}
@@ -73,13 +72,7 @@ const Navbar = () => {
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
         <Link to="/services" onClick={() => setIsOpen(false)}>Service</Link>
-        <Link
-          to="/contact"
-          onClick={() => setIsOpen(false)}
-          className="bg-white text-black px-8 py-3 rounded-full"
-        >
-          Contact
-        </Link>
+        <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
       </div>
     </div>
   );
