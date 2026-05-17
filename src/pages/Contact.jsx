@@ -54,10 +54,10 @@ const Contact = () => {
                     </h3>
                     <p className="text-xl font-medium hover:text-white transition-colors">
                       <a
-                        href="mailto:Sales@hiconceptavsolutions.in"
+                        href="mailto:projects@hiconceptavsolutions.com"
                         className="underline decoration-zinc-700 underline-offset-4"
                       >
-                        sales@hiconceptavsolutions.in
+                        projects@hiconceptavsolutions.com
                       </a>
                     </p>
                   </div>

@@ -54,7 +54,7 @@ const Footer = () => {
 
         </div>
 
-          <p className="text-sm">sales@hiconceptavsolutions.in</p>
+          <p className="text-sm">projects@hiconceptavsolutions.com</p>
 
           <p className="font-semibold">+91 9663647270</p>
           <p className="font-semibold">+91 8496939951</p>
