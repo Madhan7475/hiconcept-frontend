@@ -1,8 +1,38 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ type: "", message: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: "info", message: "Sending message..." });
+
+    try {
+      // Since there is no backend provided, we simulate a successful send.
+      // In a real scenario, you would use a service like Formspree or EmailJS here.
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      setStatus({ type: "success", message: "Message sent successfully! We'll get back to you soon." });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      setStatus({ type: "error", message: "Something went wrong. Please try again." });
+    }
+  };
+
   return (
     <div className="bg-black text-white">
 
@@ -38,65 +68,147 @@ const Contact = () => {
 
       </section>
 
-      {/* CONTACT INFORMATION */}
+      {/* CONTACT SECTION */}
       <section className="py-32 px-6">
-        <div className="max-w-[1200px] mx-auto flex justify-center">
+        <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="w-full max-w-[800px] bg-zinc-900 p-12 rounded-3xl border border-zinc-800">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-                {/* EMAIL & PHONE */}
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
-                      Email Us
-                    </h3>
-                    <p className="text-xl font-medium hover:text-white transition-colors">
-                      <a
-                        href="mailto:projects@hiconceptavsolutions.com"
-                        className="underline decoration-zinc-700 underline-offset-4"
-                      >
-                        projects@hiconceptavsolutions.com
-                      </a>
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
-                      Call Us
-                    </h3>
-                    <p className="text-xl font-medium">
-                      +91 9663647270 <br />
-                      +91 8496939951
-                    </p>
-                  </div>
+              {/* LEFT SIDE: CONTACT INFORMATION */}
+              <div className="space-y-12">
+                <div>
+                  <h2 className="text-4xl font-bold mb-6">Contact Information</h2>
+                  <p className="text-zinc-400 text-lg">
+                    Have a project in mind or just want to say hello? We're here to help you bring your vision to life.
+                  </p>
                 </div>
 
-                {/* ADDRESS & OFFICE */}
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
-                      Our Office
-                    </h3>
-                    <p className="text-zinc-300 leading-relaxed">
-                      No4, Karthik Illam, Mudala ENT <br />
-                      Clinic road, Devatha Layout, <br />
-                      Bangalore - 560043
-                    </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
+                        Email Us
+                      </h3>
+                      <p className="text-xl font-medium hover:text-white transition-colors">
+                        <a
+                          href="mailto:projects@hiconceptavsolutions.com"
+                          className="underline decoration-zinc-700 underline-offset-4 break-all"
+                        >
+                          projects@hiconceptavsolutions.com
+                        </a>
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
+                        Call Us
+                      </h3>
+                      <p className="text-xl font-medium">
+                        +91 9663647270 <br />
+                        +91 8496939951
+                      </p>
+                    </div>
                   </div>
 
-                  <div>
-                    <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
-                      Working Hours
-                    </h3>
-                    <p className="text-zinc-300">
-                      Mon - Fri: 9:00 AM - 6:00 PM <br />
-                      Sat: 10:00 AM - 2:00 PM
-                    </p>
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
+                        Our Office
+                      </h3>
+                      <p className="text-zinc-300 leading-relaxed">
+                        No4, Karthik Illam, Mudala ENT <br />
+                        Clinic road, Devatha Layout, <br />
+                        Bangalore - 560043
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-zinc-500 text-sm uppercase tracking-widest mb-2">
+                        Working Hours
+                      </h3>
+                      <p className="text-zinc-300">
+                        Mon - Fri: 9:00 AM - 6:00 PM <br />
+                        Sat: 10:00 AM - 2:00 PM
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </div>
 
+              {/* RIGHT SIDE: CONTACT FORM */}
+              <div className="bg-zinc-900 p-8 md:p-12 rounded-3xl border border-zinc-800">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm text-zinc-400 ml-1">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="John Doe"
+                        className="w-full bg-zinc-800 border border-zinc-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all placeholder:text-zinc-600"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm text-zinc-400 ml-1">Email Address</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="john@example.com"
+                        className="w-full bg-zinc-800 border border-zinc-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all placeholder:text-zinc-600"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm text-zinc-400 ml-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="+91 00000 00000"
+                      className="w-full bg-zinc-800 border border-zinc-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all placeholder:text-zinc-600"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm text-zinc-400 ml-1">Message</label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      placeholder="Tell us about your project..."
+                      rows="5"
+                      className="w-full bg-zinc-800 border border-zinc-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all placeholder:text-zinc-600 resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={status.type === "info"}
+                    className="w-full bg-white text-black font-bold py-4 rounded-xl hover:bg-zinc-200 transition-colors disabled:bg-zinc-600 disabled:cursor-not-allowed"
+                  >
+                    {status.type === "info" ? "Sending..." : "Send Message"}
+                  </button>
+
+                  {status.message && (
+                    <div className={`text-center p-3 rounded-lg text-sm ${
+                      status.type === "success" ? "text-green-400 bg-green-400/10" :
+                      status.type === "error" ? "text-red-400 bg-red-400/10" :
+                      "text-zinc-400 bg-zinc-800"
+                    }`}>
+                      {status.message}
+                    </div>
+                  )}
+                </form>
               </div>
 
             </div>
