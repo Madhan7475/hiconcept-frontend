@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { api } from "../api/client";
 import Reveal from "../components/Reveal";
 
@@ -164,8 +163,6 @@ const Services = () => {
 
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 
 const About = () => {
@@ -68,10 +67,6 @@ const About = () => {
 
         </div>
       </section>
-
-      {/* FOOTER */}
-      <Footer />
-
     </div>
   );
 };

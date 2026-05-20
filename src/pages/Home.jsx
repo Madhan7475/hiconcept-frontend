@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { api } from "../api/client";
 import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
@@ -206,8 +205,6 @@ const Home = () => {
 
         </Reveal>
       </section>
-
-      <Footer />
     </div>
   );
 };

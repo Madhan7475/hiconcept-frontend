@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 
 const Contact = () => {
@@ -223,10 +222,6 @@ const Contact = () => {
           </Reveal>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <Footer />
-
     </div>
   );
 };
