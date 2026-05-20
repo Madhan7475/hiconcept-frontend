@@ -22,14 +22,23 @@ const Contact = () => {
     setStatus({ type: "info", message: "Sending message..." });
 
     try {
-      // Since there is no backend provided, we simulate a successful send.
-      // In a real scenario, you would use a service like Formspree or EmailJS here.
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      setStatus({ type: "success", message: "Message sent successfully! We'll get back to you soon." });
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      if (response.ok) {
+        setStatus({ type: "success", message: "Message sent successfully! We'll get back to you soon." });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to send message");
+      }
     } catch (error) {
-      setStatus({ type: "error", message: "Something went wrong. Please try again." });
+      setStatus({ type: "error", message: error.message || "Something went wrong. Please try again." });
     }
   };
 
