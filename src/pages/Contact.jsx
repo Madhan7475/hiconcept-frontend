@@ -22,7 +22,7 @@ const Contact = () => {
     setStatus({ type: "info", message: "Sending message..." });
 
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("https://formspree.io/f/mykvezye", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,11 +34,10 @@ const Contact = () => {
         setStatus({ type: "success", message: "Message sent successfully! We'll get back to you soon." });
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to send message");
+        throw new Error("Failed to send message");
       }
     } catch (error) {
-      setStatus({ type: "error", message: error.message || "Something went wrong. Please try again." });
+      setStatus({ type: "error", message: "Something went wrong. Please try again." });
     }
   };
 
