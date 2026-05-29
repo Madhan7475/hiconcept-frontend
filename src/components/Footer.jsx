@@ -34,7 +34,7 @@ const Footer = () => {
 
           {/* Instagram */}
           <a
-            href="https://instagram.com/your-page"
+            href="https://www.instagram.com/hiconcept_avsolutions?igsh=dTFrdmt6MXQ0bHVp"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center rounded-full bg-black text-white hover:bg-white hover:text-black transition"
